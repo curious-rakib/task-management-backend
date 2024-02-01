@@ -77,7 +77,7 @@ Or,
 
 ## Data Base Models
 
-ER diagram
+ER diagram br
 ![ER Diagram](./images/erd.png)
 
 ## Nest Js Open Source Contributors Part

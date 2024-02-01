@@ -1,5 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 
 export class CreateTaskDto {
   @ApiProperty({
@@ -28,4 +33,14 @@ export class CreateTaskDto {
   @IsNotEmpty()
   @IsString()
   readonly status: string;
+
+  @ApiProperty({
+    example: 1,
+    description: 'The id of a user. Must be a positive number.',
+    required: true,
+  })
+  @IsNotEmpty()
+  @IsNumber()
+  @IsPositive()
+  readonly userId: number;
 }

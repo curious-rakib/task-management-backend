@@ -13,19 +13,6 @@ async function bootstrap() {
   // Set '/api' prefix to all routes.
   app.setGlobalPrefix('api');
 
-  // Swagger config.
-  const config = new DocumentBuilder()
-    .setTitle('Task Manager')
-    .setDescription('API for managing tasks in a task manager application.')
-    .setVersion('1.0')
-    .build();
-
-  // Swagger document.
-  const document = SwaggerModule.createDocument(app, config, {
-    ignoreGlobalPrefix: false,
-  });
-  SwaggerModule.setup('api-documentation', app, document);
-
   // Enable validation.
   app.useGlobalPipes(
     new ValidationPipe({
@@ -34,6 +21,20 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  // Swagger config.
+  const config = new DocumentBuilder()
+    .setTitle('Task Manager')
+    .setDescription('API for managing tasks in a task manager application.')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+
+  // Swagger document.
+  const document = SwaggerModule.createDocument(app, config, {
+    ignoreGlobalPrefix: false,
+  });
+  SwaggerModule.setup('api-documentation', app, document);
 
   // Start server with dynamic URL and PORT.
   await app.listen(env.PROT || 3000, () => {

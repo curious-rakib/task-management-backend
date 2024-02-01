@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import {
   IsEmail,
   IsNotEmpty,
+  IsOptional,
   IsString,
   IsStrongPassword,
   Matches,
@@ -11,7 +12,7 @@ export class CreateUserDto {
   @ApiProperty({
     example: 'example123',
     description:
-      'Username of an user. It must be alphanumeric (a - z or A - Z or 1 - 9). It is case sensetive (example and Example are not same).',
+      'Username of an user. It must be alphanumeric (a - z or A - Z or 1 - 9). It is case sensetive (example123 and Example123 are not same).',
     required: true,
   })
   @IsNotEmpty()
@@ -20,7 +21,7 @@ export class CreateUserDto {
   readonly username: string;
 
   @ApiProperty({
-    example: 'example@email.com',
+    example: 'example123@email.com',
     description: 'Email of an user. Must be a valid email.',
     required: true,
   })
@@ -43,4 +44,7 @@ export class CreateUserDto {
     minSymbols: 1,
   })
   readonly password: string;
+
+  @IsOptional()
+  readonly isAdmin: boolean;
 }

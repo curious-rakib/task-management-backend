@@ -24,7 +24,15 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Task Management system backend](https://github.com/curious-rakib/task-management-backend) in [Nest js](https://github.com/nestjs/nest) .
+
+## Setup
+
+```bash
+$ git clone https://github.com/curious-rakib/task-management-backend.git
+
+$ cd task-management-backend
+```
 
 ## Installation
 
@@ -40,9 +48,6 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Test
@@ -50,13 +55,34 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
+
+## Open API Documentation
+
+If you are running in local server:
+
+```bash
+http://localhost:3000/api-documentation
+```
+
+Or,
+
+```bash
+{YOUR_HOSTED_URL}/api-documentation
+```
+
+## Backend API
+
+![API](./images/api.png)
+
+## Data Base Models
+
+ER diagram
+![ER Diagram](./images/erd.png)
+
+## Nest Js Open Source Contributors Part
+
+From below is not the part of the project.
 
 ## Support
 
